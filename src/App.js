@@ -1,34 +1,27 @@
-import CategoriesList from "./components/CategoriesList/CategoriesList";
+import Home from "./routes/home/home";
+import { Route, Routes } from "react-router-dom";
 
+function Nav() {
+  return (
+    <div>
+      <h1>i'm Nav</h1>
+    </div>
+  );
+}
 function App() {
-  const categories = [
-    {
-      id: 1,
-      title: "hats",
-      imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
-    },
-    {
-      id: 2,
-      title: "jackets",
-      imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
-    },
-    {
-      id: 3,
-      title: "sneakers",
-      imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
-    },
-    {
-      id: 4,
-      title: "womens",
-      imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
-    },
-    {
-      id: 5,
-      title: "mens",
-      imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
-    },
-  ];
-  return <CategoriesList categories={categories} />;
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <div>
+            <Nav />
+            <Home />
+          </div>
+        }
+      ></Route>
+    </Routes>
+  );
 }
 
 export default App;
