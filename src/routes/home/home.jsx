@@ -30,8 +30,8 @@ function Home() {
   ];
   return (
     <div>
-      <Outlet />
       <CategoriesList categories={categories} />
+      <Outlet />
     </div>
   );
 }

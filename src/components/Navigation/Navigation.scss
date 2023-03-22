@@ -1,0 +1,27 @@
+.navigation {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    padding-left: 50px;
+  }
+  .nav-links-container {
+    padding-right: 50px;
+    .nav-link {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+    .sign-in {
+      color: rgb(255, 255, 255);
+      letter-spacing: 0.1rem;
+      background-color: rgb(233, 84, 10);
+      margin-left: 20px;
+      &:hover {
+        background-color: rgb(241, 142, 12);
+      }
+    }
+  }
+}
