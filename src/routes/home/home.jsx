@@ -1,5 +1,6 @@
 import CategoriesList from "../../components/CategoriesList/CategoriesList";
 import { Outlet } from "react-router-dom";
+import { Fragment } from "react";
 function Home() {
   const categories = [
     {
@@ -29,10 +30,10 @@ function Home() {
     },
   ];
   return (
-    <div>
+    <Fragment>
       <CategoriesList categories={categories} />
       <Outlet />
-    </div>
+    </Fragment>
   );
 }
 

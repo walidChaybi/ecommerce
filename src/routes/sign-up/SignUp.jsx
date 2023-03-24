@@ -1,42 +1,37 @@
 import React, { useState } from "react";
-import {
-  signInWithGooglePopup,
-  CreateUserDocumentFromAuth,
-} from "../../utils/firebase/firebase";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
-import "./signin.scss";
-function SignIn() {
-  const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = CreateUserDocumentFromAuth(user);
-  };
+import "./signUp.scss";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const auth = getAuth();
+  const [name, setName] = useState("");
 
+  const auth = getAuth();
   const signupHandler = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // ..
       });
   };
 
   return (
     <div>
-      <h1>Sign</h1>
-      <button onClick={logGoogleUser}>Sign in with google</button>
-
+      <h1>Signup</h1>
       <div className="signupContainer">
         <form onSubmit={signupHandler}>
+          <input
+            type="text"
+            placeholder="Name"
+            onChange={(e) => setName(e.target.value)}
+          />
           <input
             type="email"
             placeholder="Email"
@@ -47,11 +42,11 @@ function SignIn() {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">SignIn</button>
+          <button type="submit">Signup</button>
         </form>
       </div>
     </div>
   );
 }
 
-export default SignIn;
+export default SignUp;

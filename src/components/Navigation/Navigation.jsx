@@ -22,6 +22,9 @@ function Nav() {
           <Link className="nav-link sign-in" to="/signin">
             Sign-in
           </Link>
+          <Link className="nav-link sign-up" to="/signup">
+            Sign-up
+          </Link>
         </div>
       </nav>
       <Outlet />
