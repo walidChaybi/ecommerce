@@ -1,32 +1,29 @@
-.signupContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: aqua;
-  width: 500px;
-  height: 500px;
-  form {
-    display: flex;
-    flex-direction: column;
-    background-color: antiquewhite;
-    width: 80%;
-    input {
-      padding: 1rem;
-      margin-top: 1rem;
+$sub-color: rgb(63, 61, 61);
+$main-color: black;
+
+.group {
+  position: relative;
+  margin: 45px 0;
+
+  .form-input {
+    background: none;
+    background-color: white;
+    color: $sub-color;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $sub-color;
+    margin: 25px 0;
+
+    &:focus {
+      outline: none;
     }
-    button {
-      cursor: pointer;
-      padding: 1rem;
-      margin-top: 1rem;
-      width: 100%;
-      background-color: beige;
-      border: 1ps solid gray;
-      color: rgb(38, 38, 223);
-      font-size: 1.2rem;
-      font-weight: 700;
-      &:hover {
-        background-color: aqua;
-      }
-    }
+  }
+
+  input[type="password"] {
+    letter-spacing: 0.3em;
   }
 }
